@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn tập Đề 2 - Tin học 11 KNTT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-slate-100 min-h-screen text-slate-800 font-sans p-3 md:p-6">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        const de2Data = [
+            // PHẦN I: 24 CÂU HỎI TRẮC NGHIỆM ABCD (ĐỀ 2)
+            {
+                id: 1,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 1. Nhận định nào sau đây là SAI khi nói đến các loại hệ điều hành thông dụng?",
+                options: [
+                    "A. Phiên bản mới nhất của Windows là Windows 10.",
+                    "B. Windows đã trải qua nhiều phiên bản.",
+                    "C. LINUX có nguồn gốc từ hệ điều hành UNIX.",
+                    "D. Hệ điều hành Android được xây dựng trên lõi của LINUX."
+                ],
+                correctAnswer: 0,
+                explanation: "Nhận định A sai vì phiên bản Windows mới nhất hiện tại là Windows 11."
+            },
+            {
+                id: 2,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 2. Để tạo mới tệp, thư mục trên ổ đĩa trực tuyến Google Drive ta chọn:",
+                options: [
+                    "A. Mục (3)",
+                    "B. Mục (2)",
+                    "C. Mục (4)",
+                    "D. Mục (1) - Nút '+ Mới'"
+                ],
+                correctAnswer: 3,
+                explanation: "Mục (1) là nút '+ Mới' (New) dùng để tạo mới tệp hoặc thư mục trên Google Drive."
+            },
+            {
+                id: 3,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 3. Phát biểu nào sau đây là ĐÚNG về phần mềm thương mại?",
+                options: [
+                    "A. Chỉ mất phí chuyển giao nếu có.",
+                    "B. Phần mềm thương mại được bán ở dạng mã nguồn.",
+                    "C. Phần mềm “đóng gói” được bảo hành theo hợp đồng.",
+                    "D. Phần mềm “đặt hàng” được thiết kế theo yêu cầu."
+                ],
+                correctAnswer: 3,
+                explanation: "Phần mềm đặt hàng được thiết kế và xây dựng riêng theo yêu cầu của khách hàng."
+            },
+            {
+                id: 4,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 4. Với a=0, b=1 thì các phép tính a AND b, a OR b, NOT a, a XOR b có giá trị lần lượt là:",
+                options: [
+                    "A. 0 1 1 1",
+                    "B. 0 1 0 1",
+                    "C. 1 0 0 1",
+                    "D. 1 1 0 1"
+                ],
+                correctAnswer: 0,
+                explanation: "0 AND 1 = 0; 0 OR 1 = 1; NOT 0 = 1; 0 XOR 1 = 1."
+            },
+            {
+                id: 5,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 5. Phát biểu nào sau đây là SAI khi nói đến vai trò của phần mềm thương mại và phần mềm nguồn mở?",
+                options: [
+                    "A. Phần mềm nguồn mở có thể thay thế hoàn toàn phần mềm thương mại.",
+                    "B. Hầu như đều có phần mềm nguồn mở có thể thay thế được phần mềm nguồn đóng.",
+                    "C. Người dùng được sử dụng phần mềm nguồn mở chất lượng với chi phí thấp.",
+                    "D. Phần mềm thương mại đem lại nguồn tài chính để duy trì các tổ chức làm phần mềm."
+                ],
+                correctAnswer: 0,
+                explanation: "Phần mềm nguồn mở không thể thay thế hoàn toàn phần mềm thương mại vì nhiều phần mềm thương mại chuyên dụng đòi hỏi tính bảo mật và hỗ trợ kỹ thuật đặc thù."
+            },
+            {
+                id: 6,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 6. Thiết bị mạch điện tử mở rộng các cổng giao tiếp kết nối trên máy tính được gọi là gì?",
+                options: [
+                    "A. Bộ xử lí trung tâm.",
+                    "B. Bảng mạch mở rộng.",
+                    "C. Bộ nhớ ngoài.",
+                    "D. Bộ nhớ trong."
+                ],
+                correctAnswer: 1,
+                explanation: "Đây là Bảng mạch mở rộng (Extension Board) cắm thêm các cổng giao tiếp như USB, HDMI..."
+            },
+            {
+                id: 7,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 7. Thiết bị nào dưới đây có chức năng lưu trữ dữ liệu vĩnh viễn?",
+                options: [
+                    "A. Ổ đĩa cứng.",
+                    "B. Card mạng.",
+                    "C. CPU.",
+                    "D. RAM."
+                ],
+                correctAnswer: 0,
+                explanation: "Ổ đĩa cứng (HDD/SSD) lưu trữ dữ liệu lâu dài và không mất dữ liệu khi ngắt điện."
+            },
+            {
+                id: 8,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 8. Phần mềm nguồn mở nào sau đây có cùng chức năng với phần mềm thương mại về lĩnh vực hệ điều hành di động (như iOS)?",
+                options: [
+                    "A. GIMP.",
+                    "B. Android.",
+                    "C. Windows.",
+                    "D. LINUX."
+                ],
+                correctAnswer: 1,
+                explanation: "Android là hệ điều hành mã nguồn mở cho thiết bị di động tương tự iOS."
+            },
+            {
+                id: 9,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 9. Khái niệm RAM là gì?",
+                options: [
+                    "A. bộ nhớ có thể ghi được, dùng để lưu dữ liệu tạm thời khi chạy các chương trình, nhưng không giữ được lâu dài.",
+                    "B. bộ nhớ có thể đọc, ghi hay xoá, dùng để lưu các dữ liệu hệ thống cố định và các chương trình khởi động máy tính.",
+                    "C. bộ nhớ chỉ có thể đọc, không thể ghi hay xoá, dùng để lưu các dữ liệu hệ thống cố định.",
+                    "D. bộ nhớ có thể ghi được, dùng để lưu dữ liệu tạm thời khi chạy các chương trình, khi tắt máy, dữ liệu không bị xoá."
+                ],
+                correctAnswer: 0,
+                explanation: "RAM là bộ nhớ truy cập ngẫu nhiên lưu dữ liệu tạm thời và bị mất khi mất điện."
+            },
+            {
+                id: 10,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 10. Phân loại theo cách chuyển giao sử dụng thì phần mềm chia làm mấy loại?",
+                options: [
+                    "A. 2.",
+                    "B. 4.",
+                    "C. 1.",
+                    "D. 3."
+                ],
+                correctAnswer: 0,
+                explanation: "Phân loại theo cách chuyển giao gồm 2 loại: Phần mềm thương mại và Phần mềm tự do / nguồn mở."
+            },
+            {
+                id: 11,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 11. Đặc điểm nào sau đây KHÔNG phải của hệ điều hành cho thiết bị di động?",
+                options: [
+                    "A. Chú trọng khả năng kết nối mạng có dây.",
+                    "B. Dễ dàng kết nối mạng di động.",
+                    "C. Giao diện đặc biệt thân thiện.",
+                    "D. Có nhiều tiện ích hỗ trợ cá nhân."
+                ],
+                correctAnswer: 0,
+                explanation: "Thiết bị di động tập trung kết nối không dây (Wifi, 3G/4G/5G) chứ không chú trọng kết nối mạng có dây."
+            },
+            {
+                id: 12,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 12. Máy tính cá nhân dành cho người dùng phổ thông nên tiêu chí quan trọng nhất là:",
+                options: [
+                    "A. giao diện, hình ảnh đẹp.",
+                    "B. sự thân thiện, dễ sử dụng.",
+                    "C. khả năng xử lý mạnh mẽ.",
+                    "D. sự ổn định và tin cậy."
+                ],
+                correctAnswer: 1,
+                explanation: "Người dùng phổ thông ưu tiên máy tính dễ sử dụng, giao diện thân thiện."
+            },
+            {
+                id: 13,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 13. Thông số nào sau đây KHÔNG phải là của thiết bị màn hình?",
+                options: [
+                    "A. Cách kết nối với máy tính.",
+                    "B. Kích thước.",
+                    "C. Tần số quét.",
+                    "D. Độ phân giải."
+                ],
+                correctAnswer: 0,
+                explanation: "Cách kết nối là phương thức giao tiếp, không phải thông số đặc trưng kỹ thuật của màn hình."
+            },
+            {
+                id: 14,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 14. Giấy phép công cộng đối với phần mềm nguồn mở được áp dụng rộng rãi nhất là:",
+                options: [
+                    "A. GLU GPL.",
+                    "B. GNU GPL.",
+                    "C. GLU GPN.",
+                    "D. GNU GPN."
+                ],
+                correctAnswer: 1,
+                explanation: "GNU GPL (General Public License) là bản quyền phổ biến nhất."
+            },
+            {
+                id: 15,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 15. Nhóm thiết bị nào dưới đây thuộc nhóm thiết bị ra (Output)?",
+                options: [
+                    "A. Bàn phím, chuột, máy quét, loa.",
+                    "B. Đĩa cứng, màn hình, máy chiếu.",
+                    "C. Màn hình, máy chiếu, loa, tai nghe.",
+                    "D. Camera, tai nghe, đĩa cứng."
+                ],
+                correctAnswer: 1,
+                explanation: "Màn hình và máy chiếu là các thiết bị ra phổ biến."
+            },
+            {
+                id: 16,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 16. Để kết nối có dây máy tính với tivi thông minh ta sẽ sử dụng cổng nào (Cổng HDMI - Cổng số 2 trong hình)?",
+                options: [
+                    "A. Cổng 2 (HDMI)",
+                    "B. Cổng 6",
+                    "C. Cổng 1 (VGA)",
+                    "D. Cổng 3, 4, 5"
+                ],
+                correctAnswer: 0,
+                explanation: "Cổng 2 là cổng HDMI dùng truyền tín hiệu chất lượng cao sang tivi."
+            },
+            {
+                id: 17,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 17. Bộ phận thực hiện tất cả các phép tính số học và logic trong máy tính là:",
+                options: [
+                    "A. Bộ số học và logic (ALU).",
+                    "B. Bộ nhớ trong.",
+                    "C. Bộ điều khiển (CU).",
+                    "D. Bộ tính toán."
+                ],
+                correctAnswer: 0,
+                explanation: "ALU (Arithmetic Logic Unit) đảm nhận tính toán số học và logic."
+            },
+            {
+                id: 18,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 18. Dịch vụ lưu trữ đám mây nào dưới đây cho phép người dùng lưu trữ tệp tin trực tuyến?",
+                options: [
+                    "A. YouTube.",
+                    "B. Google Drive.",
+                    "C. Google dịch.",
+                    "D. Google Map."
+                ],
+                correctAnswer: 1,
+                explanation: "Google Drive là kho lưu trữ dữ liệu đám mây của Google."
+            },
+            {
+                id: 19,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 19. Thiết bị nào sau đây vừa là thiết bị vào vừa là thiết bị ra?",
+                options: [
+                    "A. Camera.",
+                    "B. Bàn phím.",
+                    "C. Màn hình cảm ứng.",
+                    "D. Máy chiếu."
+                ],
+                correctAnswer: 2,
+                explanation: "Màn hình cảm ứng tích hợp cả tính năng hiển thị (ra) và cảm ứng chạm (vào)."
+            },
+            {
+                id: 20,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 20. Khi đăng kí sử dụng dịch vụ lưu trữ thư mục và tệp trực tuyến, người dùng sẽ được cung cấp:",
+                options: [
+                    "A. phần mềm khai thác dữ liệu trực tuyến.",
+                    "B. một ổ đĩa trực tuyến.",
+                    "C. các thiết bị xử lý dữ liệu.",
+                    "D. các dịch vụ xử lý dữ liệu."
+                ],
+                correctAnswer: 1,
+                explanation: "Người dùng được cấp một không gian lưu trữ gọi là Ổ đĩa trực tuyến."
+            },
+            {
+                id: 21,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 21. Khái niệm Hệ điều hành là gì?",
+                options: [
+                    "A. môi trường để phần cứng khai thác hiệu quả phần mềm ứng dụng.",
+                    "B. môi trường để phần mềm ứng dụng khai thác hiệu quả phần cứng.",
+                    "C. thiết bị để phần cứng khai thác hiệu quả phần mềm ứng dụng.",
+                    "D. thiết bị để phần mềm ứng dụng khai thác hiệu quả phần cứng."
+                ],
+                correctAnswer: 1,
+                explanation: "Hệ điều hành tạo môi trường để phần mềm ứng dụng khai thác phần cứng."
+            },
+            {
+                id: 22,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 22. Đơn vị GB (Gigabyte) thường được sử dụng để đo lường yếu tố nào trong máy tính?",
+                options: [
+                    "A. Độ phân giải màn hình.",
+                    "B. Dung lượng RAM / Ổ cứng.",
+                    "C. Tốc độ đường truyền Internet.",
+                    "D. Tốc độ CPU."
+                ],
+                correctAnswer: 1,
+                explanation: "GB là đơn vị đo dung lượng bộ nhớ (RAM, Ổ cứng)."
+            },
+            {
+                id: 23,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 23. Thành phần nào trong hệ thống máy tính hoạt động như một lớp trung gian giữa phần cứng và phần mềm ứng dụng?",
+                options: [
+                    "A. Trình duyệt web.",
+                    "B. Bộ xử lý đồ họa (GPU).",
+                    "C. Hệ điều hành.",
+                    "D. Phần mềm soạn thảo văn bản."
+                ],
+                correctAnswer: 2,
+                explanation: "Hệ điều hành đứng ở trung gian kết nối phần cứng và phần mềm."
+            },
+            {
+                id: 24,
+                type: "mc",
+                section: "PHẦN I. CÂU HỎI TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN",
+                question: "Câu 24. Đâu là ưu điểm của phần mềm khai thác trực tuyến so với phần mềm không chạy trực tuyến?",
+                options: [
+                    "A. Có nhiều chức năng hơn.",
+                    "B. Dữ liệu tự động sao lưu về máy tính.",
+                    "C. Lưu trữ được trên thiết bị nhớ.",
+                    "D. Nhiều người có thể thao tác đồng thời."
+                ],
+                correctAnswer: 3,
+                explanation: "Ưu điểm lớn nhất là khả năng chia sẻ và cộng tác thời gian thực giữa nhiều người dùng."
+            },
+
+            // PHẦN II: CÂU HỎI TRẮC NGHIỆM ĐÚNG/SAI (ĐỀ 2)
+            {
+                id: 25,
+                type: "tf",
+                section: "PHẦN II. CÂU HỎI TRẮC NGHIỆM ĐÚNG/SAI",
+                question: "Câu 1. Để sử dụng các ứng dụng trên thiết bị di động, người dùng cần phải tải xuống và cài đặt chúng từ kho ứng dụng.",
+                statements: [
+                    { id: "a", text: "a) Tất cả các ứng dụng trên thiết bị di động đều là miễn phí.", correct: false, explanation: "Sai. Có nhiều ứng dụng yêu cầu trả phí." },
+                    { id: "b", text: "b) Người dùng có thể cài đặt bất kỳ ứng dụng nào trên thiết bị di động của mình.", correct: false, explanation: "Sai. Tùy thuộc độ tương thích hệ điều hành và bộ nhớ." },
+                    { id: "c", text: "c) Nên cẩn thận khi cài đặt ứng dụng từ các nguồn không đáng tin cậy.", correct: true, explanation: "Đúng." },
+                    { id: "d", text: "d) Ứng dụng trên thiết bị di động không thể bị tấn công bởi phần mềm độc hại.", correct: false, explanation: "Sai. Điện thoại vẫn có nguy cơ dính mã độc." }
+                ]
+            },
+            {
+                id: 26,
+                type: "tf",
+                section: "PHẦN II. CÂU HỎI TRẮC NGHIỆM ĐÚNG/SAI",
+                question: "Câu 2. Phần mềm thương mại là phần mềm được phát triển để kinh doanh, thường được phân phối dưới dạng mã máy.",
+                statements: [
+                    { id: "a", text: "a) Phần mềm thương mại luôn luôn là phần mềm trả phí.", correct: false, explanation: "Sai. Đôi khi có các bản dùng thử miễn phí." },
+                    { id: "b", text: "b) Phần mềm thương mại không thể được sửa đổi bởi người dùng.", correct: true, explanation: "Đúng. Mã nguồn đã bị đóng." },
+                    { id: "c", text: "c) Phần mềm thương mại thường được hỗ trợ kỹ thuật bởi nhà sản xuất.", correct: true, explanation: "Đúng." },
+                    { id: "d", text: "d) Phần mềm thương mại không thể được sử dụng miễn phí.", correct: false, explanation: "Sai." }
+                ]
+            },
+            {
+                id: 27,
+                type: "tf",
+                section: "PHẦN II. CÂU HỎI TRẮC NGHIỆM ĐÚNG/SAI",
+                question: "Câu 3. Máy tính có thể kết nối với các thiết bị ngoại vi thông qua cổng kết nối hoặc mạng không dây.",
+                statements: [
+                    { id: "a", text: "a) Cổng USB là loại cổng kết nối phổ biến nhất hiện nay.", correct: true, explanation: "Đúng." },
+                    { id: "b", text: "b) Cổng HDMI chỉ có thể truyền tải hình ảnh.", correct: false, explanation: "Sai. HDMI truyền cả âm thanh và hình ảnh." },
+                    { id: "c", text: "c) Bluetooth là một loại mạng không dây tốc độ cao.", correct: false, explanation: "Sai. Bluetooth là mạng không dây tầm ngắn." },
+                    { id: "d", text: "d) Wifi là một loại mạng không dây tầm ngắn/trung bình phổ biến.", correct: true, explanation: "Đúng." }
+                ]
+            },
+            {
+                id: 28,
+                type: "tf",
+                section: "PHẦN II. CÂU HỎI TRẮC NGHIỆM ĐÚNG/SAI",
+                question: "Câu 4. Thư điện tử là dịch vụ trực tuyến cho phép người dùng gửi và nhận thư điện tử.",
+                statements: [
+                    { id: "a", text: "a) Thư điện tử không thể được sử dụng để gửi tệp đính kèm.", correct: false, explanation: "Sai. Email cho phép đính kèm tệp." },
+                    { id: "b", text: "b) Thư điện tử có thể được sử dụng để giao tiếp với nhiều người cùng một lúc.", correct: true, explanation: "Đúng." },
+                    { id: "c", text: "c) Thư điện tử không có bất kỳ nguy cơ nào.", correct: false, explanation: "Sai. Email tiềm ẩn rủi ro lừa đảo, rác, mã độc." },
+                    { id: "d", text: "d) Thư điện tử là một phương thức giao tiếp nhanh chóng và tiện lợi.", correct: true, explanation: "Đúng." }
+                ]
+            }
+        ];
+
+        function App() {
+            const [userAnswers, setUserAnswers] = useState({});
+            const [submitted, setSubmitted] = useState(false);
+
+            const handleMC = (qId, optionIdx) => {
+                if (submitted) return;
+                setUserAnswers(prev => ({ ...prev, [qId]: optionIdx }));
+            };
+
+            const handleTF = (qId, stmtId, val) => {
+                if (submitted) return;
+                setUserAnswers(prev => ({
+                    ...prev,
+                    [qId]: { ...prev[qId], [stmtId]: val }
+                }));
+            };
+
+            const calculateResults = () => {
+                let correctCount = 0;
+                let totalItems = 0;
+
+                de2Data.forEach(q => {
+                    if (q.type === 'mc') {
+                        totalItems += 1;
+                        if (userAnswers[q.id] === q.correctAnswer) correctCount += 1;
+                    } else if (q.type === 'tf') {
+                        q.statements.forEach(st => {
+                            totalItems += 1;
+                            if (userAnswers[q.id]?.[st.id] === st.correct) correctCount += 1;
+                        });
+                    }
+                });
+
+                const score = Math.round((correctCount / totalItems) * 10 * 10) / 10;
+                return { score, correctCount, totalItems };
+            };
+
+            const results = submitted ? calculateResults() : null;
+
+            return (
+                <div class="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-4 md:p-8 border border-slate-200">
+                    <header class="border-b pb-4 mb-6 text-center">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Đề Số 2 - Tin học 11 KNTT</span>
+                        <h1 class="text-xl md:text-2xl font-bold text-slate-800 mt-2">Bài Ôn Tập Trắc Nghiệm Trực Tác (Đề 2)</h1>
+                        <p class="text-slate-500 text-xs mt-1">Gồm trọn vẹn 24 câu hỏi ABCD + 4 câu Đúng/Sai (16 ý)</p>
+                    </header>
+
+                    {submitted && (
+                        <div class="mb-6 p-5 bg-blue-50 border border-blue-200 rounded-xl text-center">
+                            <h2 class="text-lg font-bold text-blue-900 mb-1">Kết Quả Đề 2</h2>
+                            <div class="text-3xl font-black text-blue-600 mb-1">{results.score} / 10 Điểm</div>
+                            <p class="text-xs text-slate-600 mb-3">
+                                Trả lời chính xác <span class="font-bold text-blue-700">{results.correctCount}/{results.totalItems}</span> câu/ý.
+                            </p>
+                            <button 
+                                onClick={() => { setSubmitted(false); setUserAnswers({}); }}
+                                class="px-5 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition text-sm"
+                            >
+                                Làm lại Đề 2
+                            </button>
+                        </div>
+                    )}
+
+                    <div class="space-y-6">
+                        {de2Data.map((q, idx) => (
+                            <div key={q.id} class="p-4 border border-slate-200 rounded-xl bg-slate-50/50">
+                                <div class="text-xs font-semibold text-blue-600 uppercase mb-1">{q.section}</div>
+                                <div class="font-semibold text-slate-800 text-sm md:text-base mb-3 whitespace-pre-line">
+                                    {q.question}
+                                </div>
+
+                                {q.type === 'mc' ? (
+                                    <div class="grid grid-cols-1 gap-2">
+                                        {q.options.map((opt, optIdx) => {
+                                            const isSelected = userAnswers[q.id] === optIdx;
+                                            const isCorrect = optIdx === q.correctAnswer;
+                                            let btnStyle = "bg-white border-slate-200 text-slate-700 hover:bg-slate-100";
+
+                                            if (submitted) {
+                                                if (isCorrect) btnStyle = "bg-green-100 border-green-500 text-green-900 font-semibold";
+                                                else if (isSelected) btnStyle = "bg-red-100 border-red-500 text-red-900";
+                                            } else if (isSelected) {
+                                                btnStyle = "bg-blue-100 border-blue-500 text-blue-900 font-semibold";
+                                            }
+
+                                            return (
+                                                <button
+                                                    key={optIdx}
+                                                    onClick={() => handleMC(q.id, optIdx)}
+                                                    class={`text-left p-2.5 border rounded-lg transition text-xs md:text-sm ${btnStyle}`}
+                                                >
+                                                    {opt}
+                                                </button>
+                                            );
+                                        })}
+                                        {submitted && (
+                                            <div class="mt-2 text-xs p-2 bg-slate-100 rounded text-slate-600">
+                                                💡 <strong>Giải thích:</strong> {q.explanation}
+                                            </div>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <div class="space-y-2">
+                                        {q.statements.map(st => {
+                                            const userVal = userAnswers[q.id]?.[st.id];
+                                            return (
+                                                <div key={st.id} class="bg-white p-2.5 border border-slate-200 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                                    <span class="text-xs md:text-sm text-slate-700 flex-1">{st.text}</span>
+                                                    <div class="flex items-center space-x-2">
+                                                        {[true, false].map(val => {
+                                                            const isBtnSelected = userVal === val;
+                                                            const isRight = val === st.correct;
+                                                            let stStyle = "bg-slate-100 text-slate-600 hover:bg-slate-200";
+
+                                                            if (submitted) {
+                                                                if (isRight) stStyle = "bg-green-500 text-white font-bold";
+                                                                else if (isBtnSelected) stStyle = "bg-red-500 text-white";
+                                                            } else if (isBtnSelected) {
+                                                                stStyle = "bg-blue-600 text-white font-bold";
+                                                            }
+
+                                                            return (
+                                                                <button
+                                                                    key={String(val)}
+                                                                    onClick={() => handleTF(q.id, st.id, val)}
+                                                                    class={`px-3 py-1 text-xs rounded border border-transparent transition ${stStyle}`}
+                                                                >
+                                                                    {val ? "ĐÚNG" : "SAI"}
+                                                                </button>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+
+                    {!submitted && (
+                        <div class="mt-8 text-center">
+                            <button
+                                onClick={() => setSubmitted(true)}
+                                class="px-8 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-md"
+                            >
+                                Nộp Bài Đề 2 & Xem Điểm
+                            </button>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>
+Bạn hãy bấm làm bài và nhấn **Nộp bài** để xem điểm nhé!
